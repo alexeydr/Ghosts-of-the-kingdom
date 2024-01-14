@@ -1,0 +1,26 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "d:\\projects\\myproject\\intermediate\\build\\win64\\unrealeditor\\inc\\myproject\\uht\\basicgridactor.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\projects\\myproject\\intermediate\\build\\win64\\x64\\myprojecteditor\\debuggame\\engine\\sharedpch.engine.nonoptimized.shadowerrors.inclorderunreal5_1.h.pch",
+        "Includes": [
+            "d:\\projects\\myproject\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\myproject\\definitions.myproject.h",
+            "d:\\projects\\myproject\\source\\myproject\\public\\basicgridactor.h",
+            "f:\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\engine\\datatable.h",
+            "f:\\ue_5.2\\engine\\source\\runtime\\engine\\public\\datatableutils.h",
+            "f:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\datatable.generated.h",
+            "f:\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\components\\instancedstaticmeshcomponent.h",
+            "f:\\ue_5.2\\engine\\source\\runtime\\engine\\public\\elements\\sminstance\\sminstancemanager.h",
+            "f:\\ue_5.2\\engine\\source\\runtime\\engine\\public\\elements\\sminstance\\sminstanceelementid.h",
+            "f:\\ue_5.2\\engine\\source\\runtime\\engine\\public\\instancedstaticmeshdelegates.h",
+            "f:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\sminstanceelementid.generated.h",
+            "f:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\sminstancemanager.generated.h",
+            "f:\\ue_5.2\\engine\\source\\runtime\\engine\\public\\primitiveinstanceupdatecommand.h",
+            "f:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\instancedstaticmeshcomponent.generated.h",
+            "d:\\projects\\myproject\\intermediate\\build\\win64\\unrealeditor\\inc\\myproject\\uht\\basicgridactor.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

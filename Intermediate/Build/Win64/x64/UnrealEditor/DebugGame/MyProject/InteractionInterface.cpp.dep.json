@@ -1,0 +1,15 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "d:\\projects\\myproject\\source\\myproject\\private\\interactioninterface.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\projects\\myproject\\intermediate\\build\\win64\\x64\\myprojecteditor\\debuggame\\engine\\sharedpch.engine.nonoptimized.shadowerrors.inclorderunreal5_1.h.pch",
+        "Includes": [
+            "d:\\projects\\myproject\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\myproject\\definitions.myproject.h",
+            "d:\\projects\\myproject\\source\\myproject\\public\\interactioninterface.h",
+            "d:\\projects\\myproject\\intermediate\\build\\win64\\unrealeditor\\inc\\myproject\\uht\\interactioninterface.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
