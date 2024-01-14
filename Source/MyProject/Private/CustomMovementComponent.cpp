@@ -33,12 +33,18 @@ void UCustomMovementComponent::CreateOrDestroyMoveMap()
 			MoveMap = AMoveMap::CreateMoveMap(GetOwner(), MoveMapClass, TileLocation, MoveData->X_size, MoveData->Y_size);
 			if (MoveMap)
 			{
-				for (const auto& Move : MoveData->AvailableMoves)
+				for (int32 i = 0; i <= MoveData->X_size - 1; i++)
 				{
-					FVector Tile = FVector(TileLocation.X + Move.X * GM->TileSize.X * 2, TileLocation.Y + Move.Y * GM->TileSize.Y * 2, TileLocation.Z);
-					if (Map->IsAvailableTile(Tile))
+					for (int32 j = 0; j <= MoveData->Y_size - 1; j++)
 					{
-						MoveMap->AddAvailableMove(Tile + FVector(0,0,5));
+						for (const auto& Move : MoveData->AvailableMoves)
+						{
+							FVector Tile = FVector(TileLocation.X + Move.X * GM->TileSize.X * 2 + GM->TileSize.X * 2 * i, TileLocation.Y + Move.Y * GM->TileSize.Y * 2 + GM->TileSize.X * 2* j, TileLocation.Z);
+							if (Map->IsAvailableTile(Tile))
+							{
+								MoveMap->AddAvailableMove(Tile + FVector(0, 0, 5));
+							}
+						}
 					}
 				}
 			}

@@ -35,4 +35,10 @@ protected:
 	int32 XSize;
 	int32 YSize;
 
+	UPROPERTY()
+	TArray<FVector> CentersAllTiles;
+
+	UPROPERTY()
+	FVector CenterMainTile;
+
 };

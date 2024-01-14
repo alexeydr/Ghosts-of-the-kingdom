@@ -5,6 +5,7 @@
 #include "Components/InstancedStaticMeshComponent.h"
 #include "BasicGridActor.h"
 #include "Kismet/GameplayStatics.h"
+#include "../MyProjectGameModeBase.h"
 #include "Engine/World.h"
 
 // Sets default values
@@ -24,10 +25,22 @@ AMoveMap* AMoveMap::CreateMoveMap(AActor* OwnerObject, UClass* ClassForSpawn, co
 	FActorSpawnParameters Params;
 	Params.Owner = OwnerObject;
 	auto* SpawnedMap = OwnerObject->GetWorld()->SpawnActor<AMoveMap>(ClassForSpawn, SpawnLocation, {}, Params);
+	
 	if (SpawnedMap)
 	{
 		SpawnedMap->XSize = X_Size;
 		SpawnedMap->YSize = Y_Size;
+		SpawnedMap->CenterMainTile = SpawnLocation + FVector(50,50,0);
+		if (auto* GM = Cast<AMyProjectGameModeBase>(UGameplayStatics::GetGameMode(SpawnedMap)))
+		{
+			for (int32 i = 0; i <= X_Size - 1; i++)
+			{
+				for (int32 j = 0; j <= X_Size - 1; j++)
+				{
+					SpawnedMap->CentersAllTiles.Add({ SpawnLocation.X + GM->TileSize.X + GM->TileSize.X * 2 * i,  SpawnLocation.Y + GM->TileSize.Y + GM->TileSize.Y * 2 * j, SpawnLocation.Z });
+				}
+			}
+		}
 	}
 	return SpawnedMap;
 }
@@ -47,6 +60,18 @@ void AMoveMap::OnLeftButtonClicked_Implementation(const FVector& ClickLocation)
 {
 	if (auto* Map = Cast<ABasicGridActor>(UGameplayStatics::GetActorOfClass(this, ABasicGridActor::StaticClass())))
 	{
+		float MinDistance = FLT_MAX;
+		FVector MinVector;
+		FVector ClickLocationWithoutZ = FVector(ClickLocation.X, ClickLocation.Y, CenterMainTile.Z);
+		for (const auto& Center: CentersAllTiles)
+		{
+			if (MinDistance > (ClickLocationWithoutZ - Center).Length())
+			{
+				MinDistance = (ClickLocationWithoutZ - Center).Length();
+				MinVector = Center;
+			}
+		}
+		// в MinVector координаты ближайшего центра тайла
 		Map->MoveActorOnTail(Owner, ClickLocation, FVector(0,0, 24), XSize, YSize);
 		Destroy();
 	}
