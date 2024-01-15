@@ -10,3 +10,6 @@ Content/Fantastic_Village_Pack/maps/map_village_night.umap
 Content/Fantastic_Village_Pack/maps/map_village_night_BuiltData.uasset
 Content/Fantastic_Village_Pack/maps/map_village_day_BuiltData.uasset
 Content/Fantastic_Village_Pack/maps/map_village_overview_BuiltData.uasset
+*.db-wal
+*.opendb
+*.db-shm

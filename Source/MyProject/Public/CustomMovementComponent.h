@@ -22,8 +22,19 @@ public:
 	int Y_size = 2;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<FVector2D> AvailableMoves = { {1,0}, {1,1}, {0,-1}, {1,-1}, {0,2}, {-1,2},{-2,0}, {-2,1} };
+	TArray<FVector2D> SmallAvailableMoves = { {1,0}, {1,1}, {0,-1}, {1,-1} };
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 BigAvailableMovesUp = 1;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 BigAvailableMovesDown = 1;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 BigAvailableMovesRight = 1;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 BigAvailableMovesLeft = 1;
 };
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )

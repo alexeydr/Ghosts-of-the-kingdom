@@ -35,7 +35,7 @@ AMoveMap* AMoveMap::CreateMoveMap(AActor* OwnerObject, UClass* ClassForSpawn, co
 		{
 			for (int32 i = 0; i <= X_Size - 1; i++)
 			{
-				for (int32 j = 0; j <= X_Size - 1; j++)
+				for (int32 j = 0; j <= Y_Size - 1; j++)
 				{
 					SpawnedMap->CentersAllTiles.Add({ SpawnLocation.X + GM->TileSize.X + GM->TileSize.X * 2 * i,  SpawnLocation.Y + GM->TileSize.Y + GM->TileSize.Y * 2 * j, SpawnLocation.Z });
 				}
@@ -72,7 +72,8 @@ void AMoveMap::OnLeftButtonClicked_Implementation(const FVector& ClickLocation)
 			}
 		}
 		// в MinVector координаты ближайшего центра тайла
-		Map->MoveActorOnTail(Owner, ClickLocation, FVector(0,0, 24), XSize, YSize);
+		FVector Delta = MinVector - CenterMainTile;
+		Map->MoveActorOnTail(Owner, ClickLocation - Delta, FVector(0,0, 24), XSize, YSize);
 		Destroy();
 	}
 

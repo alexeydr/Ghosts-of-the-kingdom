@@ -161,6 +161,9 @@ protected:
 	FVector2D TileSize{ 50, 50 };
 public:	
 
+	UFUNCTION()
+	bool GetActorTiles(AActor* Actor, FBusyTile& Tails);
+
 	UFUNCTION(BlueprintPure)
 	bool GetTailByLocation(const FVector& HitLocation, FCachedMapData& Tail);
 

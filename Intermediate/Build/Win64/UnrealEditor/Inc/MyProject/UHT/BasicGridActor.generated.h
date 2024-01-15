@@ -10,6 +10,7 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AActor;
+struct FBusyTile;
 struct FCachedMapData;
 #ifdef MYPROJECT_BasicGridActor_generated_h
 #error "BasicGridActor.generated.h already included, missing '#pragma once' in BasicGridActor.h"
@@ -143,7 +144,8 @@ template<> MYPROJECT_API UScriptStruct* StaticStruct<struct FBusyTile>();
 	DECLARE_FUNCTION(execIsAvailableTile); \
 	DECLARE_FUNCTION(execMoveActorOnTail); \
 	DECLARE_FUNCTION(execGetWorldTailLocation); \
-	DECLARE_FUNCTION(execGetTailByLocation);
+	DECLARE_FUNCTION(execGetTailByLocation); \
+	DECLARE_FUNCTION(execGetActorTiles);
 
 
 #define FID_MyProject_Source_MyProject_Public_BasicGridActor_h_133_RPC_WRAPPERS_NO_PURE_DECLS \
@@ -152,7 +154,8 @@ template<> MYPROJECT_API UScriptStruct* StaticStruct<struct FBusyTile>();
 	DECLARE_FUNCTION(execIsAvailableTile); \
 	DECLARE_FUNCTION(execMoveActorOnTail); \
 	DECLARE_FUNCTION(execGetWorldTailLocation); \
-	DECLARE_FUNCTION(execGetTailByLocation);
+	DECLARE_FUNCTION(execGetTailByLocation); \
+	DECLARE_FUNCTION(execGetActorTiles);
 
 
 #define FID_MyProject_Source_MyProject_Public_BasicGridActor_h_133_ACCESSORS

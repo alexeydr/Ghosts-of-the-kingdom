@@ -651,11 +651,21 @@ template<> MYPROJECT_API UScriptStruct* StaticStruct<FBusyTile>()
 		*(bool*)Z_Param__Result=P_THIS->GetTailByLocation(Z_Param_Out_HitLocation,Z_Param_Out_Tail);
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(ABasicGridActor::execGetActorTiles)
+	{
+		P_GET_OBJECT(AActor,Z_Param_Actor);
+		P_GET_STRUCT_REF(FBusyTile,Z_Param_Out_Tails);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(bool*)Z_Param__Result=P_THIS->GetActorTiles(Z_Param_Actor,Z_Param_Out_Tails);
+		P_NATIVE_END;
+	}
 	void ABasicGridActor::StaticRegisterNativesABasicGridActor()
 	{
 		UClass* Class = ABasicGridActor::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "GenerateMap", &ABasicGridActor::execGenerateMap },
+			{ "GetActorTiles", &ABasicGridActor::execGetActorTiles },
 			{ "GetTailByLocation", &ABasicGridActor::execGetTailByLocation },
 			{ "GetWorldTailLocation", &ABasicGridActor::execGetWorldTailLocation },
 			{ "IsAvailableTile", &ABasicGridActor::execIsAvailableTile },
@@ -683,6 +693,51 @@ template<> MYPROJECT_API UScriptStruct* StaticStruct<FBusyTile>()
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABasicGridActor_GenerateMap_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ABasicGridActor_GetActorTiles_Statics
+	{
+		struct BasicGridActor_eventGetActorTiles_Parms
+		{
+			AActor* Actor;
+			FBusyTile Tails;
+			bool ReturnValue;
+		};
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Actor;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_Tails;
+		static void NewProp_ReturnValue_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ABasicGridActor_GetActorTiles_Statics::NewProp_Actor = { "Actor", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(BasicGridActor_eventGetActorTiles_Parms, Actor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_ABasicGridActor_GetActorTiles_Statics::NewProp_Tails = { "Tails", nullptr, (EPropertyFlags)0x0010000000000180, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(BasicGridActor_eventGetActorTiles_Parms, Tails), Z_Construct_UScriptStruct_FBusyTile, METADATA_PARAMS(nullptr, 0) }; // 3789281838
+	void Z_Construct_UFunction_ABasicGridActor_GetActorTiles_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+	{
+		((BasicGridActor_eventGetActorTiles_Parms*)Obj)->ReturnValue = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_ABasicGridActor_GetActorTiles_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(BasicGridActor_eventGetActorTiles_Parms), &Z_Construct_UFunction_ABasicGridActor_GetActorTiles_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABasicGridActor_GetActorTiles_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABasicGridActor_GetActorTiles_Statics::NewProp_Actor,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABasicGridActor_GetActorTiles_Statics::NewProp_Tails,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABasicGridActor_GetActorTiles_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABasicGridActor_GetActorTiles_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/BasicGridActor.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABasicGridActor_GetActorTiles_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABasicGridActor, nullptr, "GetActorTiles", nullptr, nullptr, sizeof(Z_Construct_UFunction_ABasicGridActor_GetActorTiles_Statics::BasicGridActor_eventGetActorTiles_Parms), Z_Construct_UFunction_ABasicGridActor_GetActorTiles_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABasicGridActor_GetActorTiles_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABasicGridActor_GetActorTiles_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABasicGridActor_GetActorTiles_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABasicGridActor_GetActorTiles()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABasicGridActor_GetActorTiles_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -977,6 +1032,7 @@ template<> MYPROJECT_API UScriptStruct* StaticStruct<FBusyTile>()
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ABasicGridActor_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ABasicGridActor_GenerateMap, "GenerateMap" }, // 2364502297
+		{ &Z_Construct_UFunction_ABasicGridActor_GetActorTiles, "GetActorTiles" }, // 105641449
 		{ &Z_Construct_UFunction_ABasicGridActor_GetTailByLocation, "GetTailByLocation" }, // 4107236335
 		{ &Z_Construct_UFunction_ABasicGridActor_GetWorldTailLocation, "GetWorldTailLocation" }, // 1605725389
 		{ &Z_Construct_UFunction_ABasicGridActor_IsAvailableTile, "IsAvailableTile" }, // 905791808
@@ -1092,9 +1148,9 @@ template<> MYPROJECT_API UScriptStruct* StaticStruct<FBusyTile>()
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MyProject_Source_MyProject_Public_BasicGridActor_h_Statics::ClassInfo[] = {
 		{ Z_Construct_UClass_UMapLegend, UMapLegend::StaticClass, TEXT("UMapLegend"), &Z_Registration_Info_UClass_UMapLegend, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMapLegend), 3465326898U) },
-		{ Z_Construct_UClass_ABasicGridActor, ABasicGridActor::StaticClass, TEXT("ABasicGridActor"), &Z_Registration_Info_UClass_ABasicGridActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABasicGridActor), 2854746671U) },
+		{ Z_Construct_UClass_ABasicGridActor, ABasicGridActor::StaticClass, TEXT("ABasicGridActor"), &Z_Registration_Info_UClass_ABasicGridActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABasicGridActor), 3446653504U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MyProject_Source_MyProject_Public_BasicGridActor_h_802163021(TEXT("/Script/MyProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MyProject_Source_MyProject_Public_BasicGridActor_h_627988047(TEXT("/Script/MyProject"),
 		Z_CompiledInDeferFile_FID_MyProject_Source_MyProject_Public_BasicGridActor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MyProject_Source_MyProject_Public_BasicGridActor_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_MyProject_Source_MyProject_Public_BasicGridActor_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MyProject_Source_MyProject_Public_BasicGridActor_h_Statics::ScriptStructInfo),
 		nullptr, 0);

@@ -163,3 +163,13 @@ bool ABasicGridActor::IsAvailableTile(const FVector& TileLocation)
 	BusyTiles.GenerateValueArray(Tiles);
 	return AvailableTilesLocation.Contains(TileLocation) && !Tiles.ContainsByPredicate([TileLocation](const FBusyTile& Arr) {return Arr.BusyTiles.Contains(TileLocation); });
 }
+
+bool ABasicGridActor::GetActorTiles(AActor* Actor, FBusyTile& Tails)
+{
+	if (BusyTiles.Contains(Actor))
+	{
+		Tails = BusyTiles[Actor];
+		return true;
+	}
+	return false;
+}

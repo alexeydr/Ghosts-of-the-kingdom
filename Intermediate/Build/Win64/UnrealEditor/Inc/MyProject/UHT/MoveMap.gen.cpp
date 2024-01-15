@@ -117,6 +117,15 @@ void EmptyLinkFunctionForGeneratedCodeMoveMap() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_AvailableMoves_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_AvailableMoves;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_CentersAllTiles_Inner;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_CentersAllTiles_MetaData[];
+#endif
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_CentersAllTiles;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_CenterMainTile_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_CenterMainTile;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
@@ -143,8 +152,24 @@ void EmptyLinkFunctionForGeneratedCodeMoveMap() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMoveMap_Statics::NewProp_AvailableMoves = { "AvailableMoves", nullptr, (EPropertyFlags)0x002008000009001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AMoveMap, AvailableMoves), Z_Construct_UClass_UInstancedStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMoveMap_Statics::NewProp_AvailableMoves_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMoveMap_Statics::NewProp_AvailableMoves_MetaData)) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMoveMap_Statics::NewProp_CentersAllTiles_Inner = { "CentersAllTiles", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMoveMap_Statics::NewProp_CentersAllTiles_MetaData[] = {
+		{ "ModuleRelativePath", "Public/MoveMap.h" },
+	};
+#endif
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AMoveMap_Statics::NewProp_CentersAllTiles = { "CentersAllTiles", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AMoveMap, CentersAllTiles), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AMoveMap_Statics::NewProp_CentersAllTiles_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMoveMap_Statics::NewProp_CentersAllTiles_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMoveMap_Statics::NewProp_CenterMainTile_MetaData[] = {
+		{ "ModuleRelativePath", "Public/MoveMap.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMoveMap_Statics::NewProp_CenterMainTile = { "CenterMainTile", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AMoveMap, CenterMainTile), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UClass_AMoveMap_Statics::NewProp_CenterMainTile_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMoveMap_Statics::NewProp_CenterMainTile_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMoveMap_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMoveMap_Statics::NewProp_AvailableMoves,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMoveMap_Statics::NewProp_CentersAllTiles_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMoveMap_Statics::NewProp_CentersAllTiles,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMoveMap_Statics::NewProp_CenterMainTile,
 	};
 		const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AMoveMap_Statics::InterfaceParams[] = {
 			{ Z_Construct_UClass_UInteractionInterface_NoRegister, (int32)VTABLE_OFFSET(AMoveMap, IInteractionInterface), false },  // 3739653725
@@ -186,9 +211,9 @@ void EmptyLinkFunctionForGeneratedCodeMoveMap() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MyProject_Source_MyProject_Public_MoveMap_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMoveMap, AMoveMap::StaticClass, TEXT("AMoveMap"), &Z_Registration_Info_UClass_AMoveMap, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMoveMap), 3330070114U) },
+		{ Z_Construct_UClass_AMoveMap, AMoveMap::StaticClass, TEXT("AMoveMap"), &Z_Registration_Info_UClass_AMoveMap, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMoveMap), 4032929029U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MyProject_Source_MyProject_Public_MoveMap_h_1290169351(TEXT("/Script/MyProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MyProject_Source_MyProject_Public_MoveMap_h_2438179859(TEXT("/Script/MyProject"),
 		Z_CompiledInDeferFile_FID_MyProject_Source_MyProject_Public_MoveMap_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MyProject_Source_MyProject_Public_MoveMap_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
