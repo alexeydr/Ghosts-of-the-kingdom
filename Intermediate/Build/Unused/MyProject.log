@@ -11,10 +11,10 @@
   [Upgrade] Suppress this message by setting 'IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_2;' in MyProjectEditor.Target.cs.
   [Upgrade] Alternatively you can set this to 'EngineIncludeOrderVersion.Latest' to always use the latest include order. This will potentially cause compile errors when integrating new versions of the engine.
   [Upgrade]
-  [Adaptive Build] Excluded from MyProject unity file: BasicGridActor.cpp, CustomMovementComponent.cpp, MoveMap.cpp
+  [Adaptive Build] Excluded from MyProject unity file: CustomMovementComponent.cpp
   Determining max actions to execute in parallel (6 physical cores, 12 logical cores)
     Executing up to 6 processes, one per physical core
-    Requested 1.5 GB free memory per action, 7.65 GB available: limiting max parallel actions to 5
+    Requested 1.5 GB free memory per action, 8.29 GB available: limiting max parallel actions to 5
   Building 4 actions with 4 processes...
   [1/4] Compile [x64] CustomMovementComponent.cpp
   [2/4] Link [x64] UnrealEditor-MyProject-Win64-DebugGame.lib
@@ -22,5 +22,5 @@
   [3/4] Link [x64] UnrealEditor-MyProject-Win64-DebugGame.dll
      Creating library D:\Projects\MyProject\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\MyProject\UnrealEditor-MyProject-Win64-DebugGame.suppressed.lib and object D:\Projects\MyProject\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\MyProject\UnrealEditor-MyProject-Win64-DebugGame.suppressed.exp
   [4/4] WriteMetadata MyProjectEditor-Win64-DebugGame.target
-  Total time in Parallel executor: 3.62 seconds
-  Total execution time: 4.76 seconds
+  Total time in Parallel executor: 3.43 seconds
+  Total execution time: 8.72 seconds
