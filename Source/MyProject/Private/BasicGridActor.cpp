@@ -35,9 +35,10 @@ void ABasicGridActor::GenerateMap()
 	AvailableTilesLocation.Empty();
 	Map.Empty();
 	AllMeshes.Empty();
-	for (auto* ChildISM : GetComponentsByClass(UInstancedStaticMeshComponent::StaticClass()))
+	for (auto* ChildISM : GetComponents())
 	{
-		ChildISM->DestroyComponent(true);
+		if (Cast<UInstancedStaticMeshComponent>(ChildISM))
+			ChildISM->DestroyComponent(true);
 	}
 	
 	TArray<UInstancedStaticMeshComponent*> ImpassableMeshes;
