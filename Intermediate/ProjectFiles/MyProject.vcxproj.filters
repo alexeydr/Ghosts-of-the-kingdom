@@ -11,6 +11,7 @@
     <None Include="..\..\Source\MyProjectEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitignore" />
     <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
@@ -63,6 +64,9 @@
     <ClCompile Include="..\..\Source\MyProject\Private\BasicGridActor.cpp">
       <Filter>Source\MyProject\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\MyProject\Private\BuildingSubsystem.cpp">
+      <Filter>Source\MyProject\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\MyProject\Private\CustomMovementComponent.cpp">
       <Filter>Source\MyProject\Private</Filter>
     </ClCompile>
@@ -79,6 +83,9 @@
       <UniqueIdentifier>{17AF90F8-BCFF-35EC-B42A-50C00E45B19B}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\MyProject\Public\BasicGridActor.h">
+      <Filter>Source\MyProject\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\MyProject\Public\BuildingSubsystem.h">
       <Filter>Source\MyProject\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\MyProject\Public\CustomMovementComponent.h">

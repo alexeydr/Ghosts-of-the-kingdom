@@ -1,6 +1,7 @@
-D:\Projects\MyProject\Source\MyProject\Public\BasicGridActor.h
 D:\Projects\MyProject\Source\MyProject\Public\InteractionInterface.h
+D:\Projects\MyProject\Source\MyProject\Public\PlayerCharacter.h
+D:\Projects\MyProject\Source\MyProject\Public\BuildingSubsystem.h
 D:\Projects\MyProject\Source\MyProject\Public\MoveMap.h
 D:\Projects\MyProject\Source\MyProject\Public\CustomMovementComponent.h
-D:\Projects\MyProject\Source\MyProject\Public\PlayerCharacter.h
+D:\Projects\MyProject\Source\MyProject\Public\BasicGridActor.h
 D:\Projects\MyProject\Source\MyProject\MyProjectGameModeBase.h

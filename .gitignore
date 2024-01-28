@@ -13,3 +13,8 @@ Content/Fantastic_Village_Pack/maps/map_village_overview_BuiltData.uasset
 *.db-wal
 *.opendb
 *.db-shm
+/Binaries/
+/Saved/
+/Intermediate/
+*.log
+*.bin
